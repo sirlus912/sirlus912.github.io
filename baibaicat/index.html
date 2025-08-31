@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我家可爱的猫咪们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f3f3;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding: 2rem 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .cats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .cat-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .cat-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid #ff9a9e;
+        }
+        
+        .cat-info {
+            padding: 1.5rem;
+        }
+        
+        .cat-info h3 {
+            font-size: 1.5rem;
+            color: #ff6b81;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cat-info p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .trait {
+            background: #fce4ec;
+            color: #d81b60;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .gallery {
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .gallery h2 {
+            font-size: 2.2rem;
+            color: #ff6b81;
+            margin-bottom: 2rem;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .photo-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .cat-fact {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .cat-fact h2 {
+            color: #ff6b81;
+            margin-bottom: 1rem;
+        }
+        
+        #fact-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        #new-fact {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        #new-fact:hover {
+            background: #e5566e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐾 我家可爱的猫咪们 🐾</h1>
+        <p>分享这些毛茸茸小伙伴的日常生活</p>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <p>欢迎来到我家猫咪的小天地！这里住着几位性格迥异但同样可爱的小家伙，它们给我们的生活带来了无尽的欢乐。来认识一下它们吧！</p>
+        </section>
+        
+        <section class="cats-grid">
+            <div class="cat-card">
+                <img src="https://placekitten.com/400/300" alt="猫咪" class="cat-image">
+                <div class="cat-info">
+                    <h3>白白</h3>
+                    <p>优雅的波斯猫，有着雪白的毛发和蓝色的眼睛。性格温和，喜欢静静地躺在窗边晒太阳。</p>
+                    <div class="traits">
+                        <span class="trait">贪玩</span>
+                        <span class="trait">亲人</span>
+                        <span class="trait">好奇</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cat-card">
+                <img src="https://placekitten.com/400/301" alt="猫咪" class="cat-image">
+                <div class="cat-info">
+                    <h3>九千</h3>
+                    <p>一只活泼好动的布偶猫，最喜欢玩毛线球和追激光笔。虽然有点调皮，但撒娇功夫一流！</p>
+                    <div class="traits">
+                        <span class="trait">文静</span>
+                        <span class="trait">优雅</span>
+                        <span class="trait">挑剔</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cat-card">
+                <img src="https://placekitten.com/400/302" alt="猫咪" class="cat-image">
+                <div class="cat-info">
+                    <h3>橘宝</h3>
+                    <p>典型的橘猫，胃口极好，性格懒散。最大的爱好是吃饭和睡觉，是一只快乐的"橘猪"。</p>
+                    <div class="traits">
+                        <span class="trait">贪吃</span>
+                        <span class="trait">温顺</span>
+                        <span class="trait">懒散</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cat-fact">
+            <h2>🐱 猫咪小知识</h2>
+            <p id="fact-text">猫咪的鼻子纹路是独一无二的，就像人类的指纹一样！</p>
+            <button id="new-fact">获取新知识</button>
+        </section>
+        
+        <section class="gallery">
+            <h2>猫咪相册</h2>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="t1.png" alt="猫咪照片">
+                </div>
+                <div class="photo-item">
+                    <img src="t2.png" alt="猫咪照片">
+                </div>
+                <div class="photo-item">
+                    <img src="https://placekitten.com/300/202" alt="猫咪照片">
+                </div>
+                <div class="photo-item">
+                    <img src="https://placekitten.com/300/203" alt="猫咪照片">
+                </div>
+                <div class="photo-item">
+                    <img src="https://placekitten.com/300/204" alt="猫咪照片">
+                </div>
+                <div class="photo-item">
+                    <img src="https://placekitten.com/300/205" alt="猫咪照片">
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>感谢访问我家猫咪的主页 🐾</p>
+        <p>© 2023 猫咪之家</p>
+    </footer>
+
+    <script>
+        // 猫咪小知识功能
+        const catFacts = [
+            "猫咪一天中大约有70%的时间在睡觉。",
+            "家猫的奔跑速度最快可达每小时48公里。",
+            "猫咪的听力比人类强三倍以上。",
+            "猫咪的胡须可以帮助它们判断是否能通过狭窄的空间。",
+            "每只猫咪的鼻纹都是独一无二的，就像人类的指纹。",
+            "猫咪最多可以发出100种不同的声音。",
+            "猫咪跳跃的高度可以达到自己身长的5倍。"
+        ];
+        
+        const factElement = document.getElementById('fact-text');
+        const newFactButton = document.getElementById('new-fact');
+        
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            factElement.textContent = catFacts[randomIndex];
+        }
+        
+        newFactButton.addEventListener('click', showRandomFact);
+        
+        // 初始加载时显示一个随机知识
+        showRandomFact();
+    </script>
+</body>
+</html>
